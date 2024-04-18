@@ -7,7 +7,7 @@ def main():
     st.title('Templates for Tasks')
 
     # Carregar a lista de engenheiros e criar um menu suspenso para seleção
-    engineer_choices = load_engineers('../data/engineers.txt')
+    engineer_choices = load_engineers('data/engineers.txt')
     if not engineer_choices:
         st.error("Engineer list is empty. Please check your 'engineers.txt' file.")
         return
@@ -16,11 +16,11 @@ def main():
 
     # Selecionar o template
     template_options = {
-        "New PC Request": "../templates/new_pc.txt",
-        "Bring Laptop to TechHub": "../templates/incident.txt",
-        "Quotation": "../templates/quotation.txt",
-        "PC Send": "../templates/pc_send.txt",
-        "Hardware Reclaim": "../templates/pc_return.txt"
+        "New PC Request": "templates/new_pc.txt",
+        "Bring Laptop to TechHub": "templates/incident.txt",
+        "Quotation": "templates/quotation.txt",
+        "PC Send": "templates/pc_send.txt",
+        "Hardware Reclaim": "templates/pc_return.txt"
     }
     template_name = st.selectbox("Choose your template:", list(template_options.keys()))
     template_content = load_template(template_options[template_name])

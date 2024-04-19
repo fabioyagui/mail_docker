@@ -1,5 +1,4 @@
 import urllib.parse
-import pyperclip
 import re
 import os
 

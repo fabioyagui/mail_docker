@@ -1,6 +1,6 @@
 import os
 
-def load_placeholder_data(placeholder_name, base_dir='../data'):
+def load_placeholder_data(placeholder_name, base_dir='data'):
     """Carrega o conteúdo do arquivo de placeholder especificado e retorna como uma lista."""
     file_path = os.path.join(base_dir, f'{placeholder_name}.txt')
     try:

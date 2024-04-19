@@ -80,6 +80,7 @@ def main():
             period = st.selectbox("Period:", load_placeholder_data('period'))
         data['period'] = period
 
+    cc_emails = " "
 
     if st.button("Prepare E-mail"):
         # Verifica se todos os campos relevantes estão preenchidos corretamente.
@@ -106,11 +107,10 @@ def main():
                 st.error(f"Failed to copy to clipboard. {e}")
             
             # Cria o link 'mailto' para abrir o cliente de e-mail
-            mailto_link = create_mailto_link(recipient_email, subject)
+            mailto_link = create_mailto_link(recipient_email, cc_emails, subject)
             st.markdown(f'[Open in Email Client]({mailto_link})', unsafe_allow_html=True)
         else:
             st.error("Please fill all the fields.")
-
 
 if __name__ == "__main__":
     main()

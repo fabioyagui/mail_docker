@@ -106,7 +106,7 @@ def main():
                 st.error(f"Failed to copy to clipboard. {e}")
             
             # Cria o link 'mailto' para abrir o cliente de e-mail
-            mailto_link = create_mailto_link(recipient_email, cc_emails, subject)
+            mailto_link = create_mailto_link(recipient_email, subject)
             st.markdown(f'[Open in Email Client]({mailto_link})', unsafe_allow_html=True)
         else:
             st.error("Please fill all the fields.")

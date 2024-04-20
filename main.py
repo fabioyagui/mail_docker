@@ -18,7 +18,6 @@ def main():
 
     # Selecionar o template
     template_options = {
-        "New PC Request": "templates/new_pc.txt",
         "Bring Laptop to us": "templates/incident.txt",
         "Please more information": "templates/more_info.txt",
         "PC Send": "templates/pc_send.txt",

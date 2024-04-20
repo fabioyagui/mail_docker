@@ -1,0 +1,10 @@
+{manager}さん、
+
+お疲れ様です。IT ヘルプデスク{engineer}と申します。
+ 
+HPのラップトップ修理の見積もりを受け取りました。
+添付ファイルとして送信しますので、ご確認の上、このラップトップを修理できるようPO番号を作成してください。
+ 
+PO番号の作成方法についてご不明な点がございましたら、どうぞこのマニュアルをご確認ください。https://myconnect.gsk.com/:p:/r/sites/modern-JapanProcurement/_layouts/15/Doc.aspx?sourcedoc=%7B7E3339A4-4CFC-4F62-80F6-F49EDB388AF6%7D&file=%E6%97%A5%E6%9C%AC%E8%AA%9E%E7%89%88%20Ariba%20Guided%20Buying%20Help%20Guide%20for%20Requestors%20and%20Approversさらにご質問がある場合は、[jp.kobai-support@gsk.com]までメールを送っていただけますようお願いします。
+ 
+よろしくお願いいたします。

@@ -1,0 +1,10 @@
+Dear {user},
+
+Good day. I am {engineer} from the IT Help Desk.
+The issue related to ticket number {ticket} is taking longer than expected, but we are taking the following actions:
+
+According to the ticket description, it seems that "{incident_description}".
+
+We apologize for any inconvenience caused by the delay. We sincerely appreciate your understanding and cooperation. Thank you very much for your patience.
+
+Best regards,

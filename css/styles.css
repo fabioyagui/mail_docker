@@ -1,0 +1,10 @@
+.text-container {
+    background-color: #ff0000;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.text {
+    color: #722828;
+    font-size: 16px;
+}

@@ -1,0 +1,12 @@
+{user},
+
+Good day. I am {engineer} from the IT Help Desk.
+I'm contacting you regarding ticket number {ticket}.
+
+According to the ticket description, it states "{incident_description}".
+
+We apologize for the inconvenience, but could you please come to the main Help Lounge for PC verification?
+
+Your cooperation would be greatly appreciated. We apologize for any inconvenience and thank you in advance.
+
+Best regards,

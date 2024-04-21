@@ -1,0 +1,94 @@
+english_templates = {
+    "Bring Laptop to us": """
+Hi {User's Name},
+
+I hope this email finds you well. As part of our IT Help Desk team, I am reaching out regarding ticket number {ticket}.
+
+We have received your request and are currently investigating the issue. According to the ticket description, it seems that "{incident_description}".
+
+If additional information is required, we will contact you again. Thank you for your cooperation.
+
+Best regards,
+{engineer}
+""",
+
+    "Please more information": """
+Hi {User's Name},
+
+I hope you're doing well. This email is in reference to ticket number {ticket}.
+
+We kindly ask for additional information regarding the issue. As per the ticket description, "{incident_description}".
+
+We appreciate your prompt response.
+
+Best regards,
+{engineer}
+""",
+
+    "PC Send": """
+Hi {User's Name},
+
+I trust this email finds you well. We wanted to inform you that we have sent the PC as requested.
+
+Ticket Number: {ticket}
+New User: {new_user}
+
+If you have any questions or need further assistance, please feel free to reach out to us.
+
+Best regards,
+{engineer}
+""",
+
+    "Hardware Reclaim": """
+Hi {User's Name},
+
+I hope this email finds you well. We are writing to inform you about the hardware reclaim process.
+
+Ticket Number: {ticket}
+New User: {new_user}
+
+If you have any questions or need further assistance, please feel free to reach out to us.
+
+Best regards,
+{engineer}
+""",
+
+    "Status Update": """
+Hi {User's Name},
+
+I hope you're doing well. This is an update regarding ticket number {ticket}.
+
+We are currently investigating and resolving the issue as per the ticket description, "{incident_description}".
+
+We will provide further updates as soon as they become available. Thank you for your patience and understanding.
+
+Best regards,
+{engineer}
+""",
+
+    "Ticket done": """
+Hi {User's Name},
+
+I trust this email finds you well. We are pleased to inform you that the issue related to ticket number {ticket} has been resolved.
+
+As per the ticket description, "{incident_description}".
+
+If you have any further questions or concerns, please don't hesitate to contact us. We are here to help.
+
+Best regards,
+{engineer}
+""",
+
+    "Thank you for your time": """
+Hi {User's Name},
+
+I hope you're doing well. We appreciate the time you've taken to assist us with ticket number {ticket}.
+
+As per the ticket description, "{incident_description}".
+
+Thank you once again for your cooperation and understanding.
+
+Best regards,
+{engineer}
+"""
+}

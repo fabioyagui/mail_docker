@@ -1,0 +1,12 @@
+Dear {user},
+
+Good day. I am {engineer} from the IT Help Desk.
+Regarding ticket number {ticket}, we require additional information to resolve the issue.
+
+According to the ticket description, it appears that "{incident_description}".
+
+If you have the information available, could you please provide it? We will address it promptly.
+
+Thank you for your cooperation.
+
+Best regards,

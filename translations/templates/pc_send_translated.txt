@@ -1,0 +1,13 @@
+Dear {user},
+
+Good day. I am {engineer} from the IT Help Desk.
+{ticket}
+A laptop was sent today.
+Yamato Shipping Tracking Number: {yamato}
+Estimated Arrival Date: {day} {month} ({yobi}), {period}
+Contents: PC unit, setup guide.
+Once received, please refer to the included setup guide for the initial setup.
+
+Thank you very much.
+
+Best regards,

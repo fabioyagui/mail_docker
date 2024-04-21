@@ -1,0 +1,12 @@
+Dear {user},
+
+Good day. I am {engineer} from the IT Help Desk.
+The issue related to ticket number {ticket} has been resolved.
+
+According to the ticket description, it seems that "{incident_description}".
+
+If you have any further questions or need additional assistance, please feel free to contact us anytime. We are always here to support you.
+
+We apologize for any inconvenience caused and appreciate your understanding. Thank you very much for your cooperation.
+
+Best regards,

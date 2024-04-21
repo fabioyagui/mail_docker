@@ -1,22 +1,29 @@
 import streamlit as st
-from functions import load_template, format_template, create_mailto_link, extract_placeholders
-from data_manager import load_engineers, load_placeholder_data
+from functions import parse_css, load_css, load_template, format_template, create_mailto_link, extract_placeholders, load_translation
+from data_manager import load_placeholder_data
 import pyperclip
+import os
+
+# Carregar o conteúdo do CSS
+css_content = load_css('styles.css')
+
+# Aplicar o estilo CSS
+st.markdown(f'<style>{css_content}</style>', unsafe_allow_html=True)
 
 def main():
-    st.title('メールマスター ')
-
+    st.markdown('<h1 style="text-align: center;">メールマスター</h1>', unsafe_allow_html=True)
 
     # Permitir que o usuário digite o nome de um engenheiro
     selected_engineer = st.text_input("Type the engineer's name:")
 
     # Checagem básica para garantir que um nome foi inserido
     if not selected_engineer.strip():
-        st.error("Please enter an engineer's name.")
+        st.markdown('<p style="background-color: #008080; color: #ffffff; padding: 15px; border-radius: 10px; font-size: 20px; text-align: center; display: flex; align-items: center; justify-content: center;">Welcome, please enter an engineer\'s name.</p>', unsafe_allow_html=True)
         return
 
 
     # Selecionar o template
+
     template_options = {
         "Bring Laptop to us": "templates/incident.txt",
         "Please more information": "templates/more_info.txt",
@@ -27,18 +34,35 @@ def main():
         "Thank you for your time": "templates/time_thanks.txt"
     }
     template_name = st.selectbox("Choose your template:", list(template_options.keys()))
-    template_content = load_template(template_options[template_name])
+    template_filename = template_options[template_name]
+    template_content = load_template(template_filename)
 
+    # Remova a extensão '.txt' para obter o nome base do template para a tradução
+    base_template_name = os.path.splitext(template_filename)[0]
+    translation_content = load_translation(base_template_name)
+    # Agora, a verificação de erro deve ser atualizada para refletir que estamos carregando um arquivo de tradução específico
     if not template_content:
-        st.error("Template file not found. Please check the file path.")
-        return
+        st.error("Template file not found. Please check the file paths.")
+    elif not translation_content:
+        st.error(f"Translation for {base_template_name} not found. Please check the file paths.")
+    else:
+        # Carregar o estilo CSS
+        css_content = load_css('styles.css')
+        # Converter o conteúdo CSS em um dicionário
+        css_dict = parse_css(css_content)
+        
+        # Exibir a tradução na tela com o estilo
+        with st.container():
+            st.text("Template Translation:")
+            st.markdown(f'<div style="background-color: #f0f0f0; padding: 20px; border-radius: 10px; border: 3px solid #0078d4; font-size: 16px; color: #444;">{translation_content}</div>', unsafe_allow_html=True)
 
     # Solicitar campos obrigatórios
     manager = st.text_input("User's Name:")
     recipient_email = st.text_input("Recipient Email:")
-    
 
-    # Extrair os placeholders do template selecionado
+
+    
+        # Extrair os placeholders do template selecionado
     placeholders = extract_placeholders(template_content)
     data = {'recipient_email': recipient_email, 'manager': manager, 'engineer': selected_engineer, 'ticket': None, 'new_user': None}
 
@@ -100,7 +124,8 @@ def main():
             period = st.selectbox("Period:", load_placeholder_data('period'))
         data['period'] = period
 
-    cc_emails = " "
+
+    cc_emails = " "  # Suponha que não haja CCs inicialmente
 
     if st.button("Prepare E-mail"):
         # Verifica se todos os campos relevantes estão preenchidos corretamente.
@@ -117,19 +142,15 @@ def main():
                 "Thank you for your time": f"お時間をいただきありがとうございます || チケット番号: {data.get('ticket', 'No Ticket')}"
             }
             
-            # Seleciona o assunto correto baseado no template escolhido
             subject = subject_map.get(template_name, "Default Subject")
 
-            # Formata o corpo do e-mail usando o template carregado
             body = format_template(template_content, data)
             try:
-                # Tenta copiar o corpo do e-mail para a área de transferência
                 pyperclip.copy(body)
                 st.success("E-mail prepared and body text copied to clipboard.")
             except Exception as e:
                 st.error(f"Failed to copy to clipboard. {e}")
             
-            # Cria o link 'mailto' para abrir o cliente de e-mail
             mailto_link = create_mailto_link(recipient_email, cc_emails, subject)
             st.markdown(f'[Open in Email Client]({mailto_link})', unsafe_allow_html=True)
         else:

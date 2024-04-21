@@ -1,0 +1,11 @@
+Dear {user},
+
+Good day. I am {engineer} from the IT Help Desk.
+I am reaching out regarding ticket number {ticket} that you inquired about.
+
+We have received your inquiry and are currently investigating the matter with the following details:
+According to the ticket description, it appears that "{incident_description}".
+
+If additional information is required, we will contact you again. Thank you for your cooperation.
+
+Best regards,

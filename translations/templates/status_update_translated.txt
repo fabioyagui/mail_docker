@@ -1,0 +1,11 @@
+Dear {user},
+
+Good day. I am {engineer} from the IT Help Desk.
+There is an update regarding the status of ticket number {ticket}.
+
+Currently, we are proceeding with the investigation and resolution based on the following details:
+According to the ticket description, it seems that "{incident_description}".
+
+We will provide further information as soon as there is progress. We apologize for any inconvenience caused and appreciate your understanding.
+
+Best regards,

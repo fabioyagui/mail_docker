@@ -99,7 +99,11 @@ def main():
             data['new_user'] = st.text_input("New User:")
         if 'ticket' in placeholders:
             data['ticket'] = st.text_input("Ticket:")
-    
+    elif template_name == "Please more information":
+        if 'new_user' in placeholders:
+            data['new_user'] = st.text_input("New User:")
+        if 'ticket' in placeholders:
+            data['ticket'] = st.text_input("Ticket:")
 
     # Restante dos campos do formulário
     for placeholder in placeholders - {'manager', 'engineer', 'recipient_email', 'day', 'month', 'yobi', 'period', 'ticket', 'new_user'}:

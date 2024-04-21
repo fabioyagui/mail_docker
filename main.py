@@ -1,7 +1,7 @@
 import streamlit as st
 from functions import parse_css, load_css, load_template, format_template, create_mailto_link, extract_placeholders, load_translation
 from data_manager import load_placeholder_data
-import pyperclip
+from clipboard import copy as clipboard_copy
 import os
 
 # Carregar o conteúdo do CSS
@@ -150,7 +150,7 @@ def main():
 
             body = format_template(template_content, data)
             try:
-                pyperclip.copy(body)
+                clipboard_copy(body)
                 st.success("E-mail prepared and body text copied to clipboard.")
             except Exception as e:
                 st.error(f"Failed to copy to clipboard. {e}")
